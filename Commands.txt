@@ -1,0 +1,27 @@
+#!/binbash
+mkdir files_dir
+cd files_dir
+for i in `seq 1 1000`;
+do
+	touch file_${i}_.txt
+done
+cd .. && ls files_dir
+
+
+
+head -n 65  text_file.txt | grep “$(seq 50 1 66)” > text_file2.txt
+
+cat pg2600.txt | tr ‘the’ ‘the\n’ | grep “\bthe\b” | wc -l 
+
+//How many file & dirs have executed permission in home dir?
+ll | cut -d ' ' -f 1 | grep x | wc
+//or
+ls -la | grep ^d..x |wc
+//or
+ls -la | grep ^...x |wc
+
+/////Use /etc/passwd files to list only the usernames with privillege>100 
+cat /etc/passwd | cut -d ':' -f1,3 | egrep 1[0-9]{2} 
+
+ps aux | grep "chrome" | wc
+
